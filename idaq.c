@@ -1218,8 +1218,8 @@ void* threadReceiveConnectionAndSend(void* arg) {
 
 	// Get process id and thread id.
 	pid_t pid = getpid();
-    //pthread_t tid = pthread_self(); // Get tid, different from "syscall(SYS_gettid)".
-    pid_t tid = gettid();
+	//pthread_t tid = pthread_self(); // Get tid, different from "syscall(SYS_gettid)".
+	pid_t tid = gettid();
 	printf("thread preSock: %d, pid: %u, tid: %u\n", preSock, (unsigned int) pid, (unsigned int) tid);
 
 
@@ -1295,7 +1295,7 @@ void* threadReceiveConnectionAndSend(void* arg) {
 	pthread_mutex_lock(&threadRSTagLock);
 	threadRSTag++;
 	printf("Tag: %llu\n", threadRSTag);
-    pthread_mutex_unlock(&threadRSTagLock);
+	pthread_mutex_unlock(&threadRSTagLock);
 	printf("thread %d-%d CPUUse: %f, threadCPUUse: %f\n", pid, tid, CPUUse, threadCPUUse);
 	printf("thread %d-%d totalRecvMsgSize: %llu Bytes\n", pid, tid, totalRecvMsgSize);
 	printf("thread %d-%d totalSendMsgSize: %llu Bytes\n", pid, tid, totalSendMsgSize);
