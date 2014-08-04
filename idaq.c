@@ -1119,8 +1119,8 @@ void* threadReceiveAndSend(void* arg) { // Deprecated.
 
 	// Get process id and thread id.
 	pid_t pid = getpid();
-    //pthread_t tid = pthread_self(); // Get tid, different from "syscall(SYS_gettid)".
-    pid_t tid = gettid();
+	//pthread_t tid = pthread_self(); // Get tid, different from "syscall(SYS_gettid)".
+	pid_t tid = gettid();
 	printf("thread preSock: %d, pid: %u, tid: %u\n", preSock, (unsigned int) pid, (unsigned int) tid);
 
 
