@@ -1,5 +1,5 @@
 ##idaq
-Developping...
+This project is stopped.
 
 ##Usage
 
